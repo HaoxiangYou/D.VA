@@ -1,0 +1,64 @@
+params:  
+  diff_env:
+    name: HopperEnv
+    stochastic_env: False
+    episode_length: 1000
+    MM_caching_frequency: 16
+
+  train:
+    agent: curl_sac
+    init_steps: 1000
+    num_train_steps: 6e7
+    batch_size: 32
+    hidden_dim: 1024
+  
+  eval:
+    eval_freq: 100000
+    num_eval_episodes: 10
+  
+  critic:
+    critic_lr: 1e-3
+    critic_beta: 0.9
+    critic_tau: 0.01
+    critic_target_update_freq: 2
+  
+  actor:
+    actor_lr: 1e-3
+    actor_beta: 0.9
+    actor_log_std_min: -10
+    actor_log_std_max: 2
+    actor_update_freq: 2
+  
+  encoder:
+    encoder_type: pixel
+    encoder_feature_dim: 50
+    encoder_lr: 1e-3
+    encoder_tau: 0.05
+    num_layers: 4
+    num_filters: 32
+    curl_latent_dim: 128
+  
+  sac:
+    discount: 0.99
+    init_temperature: 0.1
+    alpha_lr: 1e-4
+    alpha_beta: 0.5
+  
+  misc:
+    save_tb: True
+    save_buffer: False
+    save_video: True
+    save_model: False
+    detach_encoder: False
+    log_interval: 100
+
+  general:
+    device: cuda:0
+    dmc_render_model: hopper
+    num_actors: 16
+    seed: 1000
+    image_size: 84
+    action_repeat: 2
+    frame_stack: 3
+    replay_buffer_capacity: 100000
+    pre_transform_image_size: 100

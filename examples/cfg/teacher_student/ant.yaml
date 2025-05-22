@@ -1,0 +1,37 @@
+params:  
+  diff_env:
+    name: AntEnv
+    stochastic_env: True
+    episode_length: 1000
+    MM_caching_frequency: 16
+
+  network:
+    actor: ActorDeterministicMLP # ActorStochasticMLP
+    actor_mlp:
+      units: [128, 64, 32]
+      activation: elu
+    
+  config:
+    name: df_ant_teacher_student
+    teacher_policy_config_path: ./teacher/ant.yaml
+    actor_learning_rate: 2e-3 # adam
+    betas: [0.7, 0.95] # adam
+    lr_schedule: linear # ['constant', 'linear']
+    num_actors: 64
+    steps_num: 32
+    max_epochs: 10000
+    num_update_per_epoch: 2000
+    batch_size: 128
+    learning_starts: 32000
+    max_replay_buffer_size: 100000
+    supervised_loss_threshold: 0.1 # threshold for early stop
+    vis_obs: True
+    img_height: 84
+    img_width: 84
+    save_interval: 200
+
+    player:
+      determenistic: True
+      games_num: 1
+      num_actors: 1
+      print_stats: True

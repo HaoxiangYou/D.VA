@@ -1,0 +1,21 @@
+lr: 8e-5
+feature_dim: 100
+num_train_frames: 30100000
+stddev_schedule: 'linear(1.0,0.1,2000000)'
+
+params:  
+  diff_env:
+    name: HumanoidEnv
+    stochastic_env: False
+    episode_length: 1000
+    MM_caching_frequency: 48
+
+  general:
+    device: cuda:0
+    render: True 
+    seed: 400
+  
+  config:
+    num_actors: 32 
+    img_height: 84
+    img_width: 84

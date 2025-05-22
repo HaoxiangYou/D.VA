@@ -1,0 +1,20 @@
+num_train_frames: 30100000
+num_seed_frames: 34000
+stddev_schedule: 'linear(1.0,0.1,500000)'
+
+params:  
+  diff_env:
+    name: CheetahEnv
+    stochastic_env: True
+    episode_length: 1000
+    MM_caching_frequency: 16
+  
+  general:
+    device: cuda:0
+    render: True 
+    seed: 400
+
+  config:
+    num_actors: 32
+    img_height: 84
+    img_width: 84

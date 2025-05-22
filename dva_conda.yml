@@ -1,0 +1,28 @@
+name: newdva
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.9.21
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - pip=25.0
+  - pip:
+    - numpy==1.26.4
+    - dm_control==1.0.28
+    - urchin==0.0.29
+    - networkx==2.5.1
+    - gym==0.26.2
+    - pyyaml==6.0
+    - tensorboard==2.8.0
+    - tensorboardx==2.5
+    - protobuf==3.20.0
+    - imageio==2.37.0
+    - imageio-ffmpeg==0.6.0
+    - mani_skill==3.0.0b20
+    - hydra-core==1.1.0
+    - hydra-submitit-launcher==1.1.5
+    - ruamel.yaml==0.17.4
+    - mujoco==3.3.0
+    - termcolor==3.1.0
+    - scikit-image==0.19.3

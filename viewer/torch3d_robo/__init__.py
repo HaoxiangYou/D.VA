@@ -1,0 +1,5 @@
+from viewer.torch3d_robo.robot_renderer.cartpole_renderer import CartpoleRenderer
+from viewer.torch3d_robo.robot_renderer.ant_renderer import AntRenderer
+from viewer.torch3d_robo.robot_renderer.hopper_renderer import HopperRenderer
+from viewer.torch3d_robo.robot_renderer.cheetah_renderer import CheetahRenderer
+from viewer.torch3d_robo.robot_renderer.humanoid_renderer import HumanoidRenderer
