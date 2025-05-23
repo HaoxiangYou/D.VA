@@ -1,4 +1,4 @@
-name: newdva
+name: dva
 channels:
   - pytorch
   - defaults
