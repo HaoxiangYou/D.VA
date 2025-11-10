@@ -1,4 +1,3 @@
-from multiprocessing.sharedctypes import Value
 import sys, os
 
 from torch.nn.utils.clip_grad import clip_grad_norm_
@@ -18,12 +17,11 @@ import dflex as df
 
 import envs
 import models.actor
-from models.actor import ActorStochasticMLP, ActorDeterministicMLP
 import models.critic
 from utils.common import *
 import utils.torch_utils as tu
 from utils.running_mean_std import RunningMeanStd
-from utils.dataset import CriticDataset, ActorSupervisedDataset
+from utils.dataset import CriticDataset
 from utils.time_report import TimeReport
 from utils.average_meter import AverageMeter
 from viewer.video_recorder import VideoRecorder
